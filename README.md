@@ -2,36 +2,6 @@
 
 This is the official website for the Ondo State Ministry of Information and Orientation, built with Next.js and React.
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18.x or later
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-   \`\`\`bash
-   git clone https://github.com/your-username/ondo-moi.git
-   cd ondo-moi
-   \`\`\`
-
-2. Install dependencies:
-   \`\`\`bash
-   npm install
-   # or
-   yarn install
-   \`\`\`
-
-3. Run the development server:
-   \`\`\`bash
-   npm run dev
-   # or
-   yarn dev
-   \`\`\`
-
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Project Structure
 
@@ -76,5 +46,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Next.js team for the amazing framework
 - All contributors to the project
 \`\`\`
-
-Let's update the main layout file to include proper metadata and favicon:
