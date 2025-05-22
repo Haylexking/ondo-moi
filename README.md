@@ -1,6 +1,6 @@
 # Ondo State Ministry of Information Website
 
-This is the official website for the Ondo State Ministry of Information and Orientation, built with Next.js and React.
+This is the website I built for the Ondo State Ministry of Information and Orientation, built with Next.js and React.
 
 
 ## Project Structure
