@@ -4,6 +4,7 @@ import { Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import NewsletterSection from "@/components/newsletter-section"
+import SafeImage from "@/components/SafeImage"
 
 interface CouncilMember {
   name: string
@@ -196,16 +197,13 @@ export default function Politics() {
             {executiveCouncilMembers.map((member, index) => (
               <div key={index} className="overflow-hidden rounded-lg bg-white shadow">
                 <div className="relative h-48 w-full">
-                  <Image
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement
-                      target.src = "/placeholder.svg?height=150&width=150"
-                    }}
-                  />
+                    <SafeImage
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                    />
+
                 </div>
                 <div className="p-4">
                   <h3 className="mb-1 font-semibold">{member.name}</h3>
@@ -222,16 +220,12 @@ export default function Politics() {
             {honourableCommissioners.map((commissioner, index) => (
               <div key={index} className="overflow-hidden rounded-lg bg-white shadow">
                 <div className="relative h-48 w-full">
-                  <Image
-                    src={commissioner.image || "/placeholder.svg"}
-                    alt={commissioner.name}
-                    fill
-                    className="object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement
-                      target.src = "/placeholder.svg?height=150&width=150"
-                    }}
-                  />
+                  <SafeImage
+                      src={commissioner.image}
+                      alt={commissioner.name}
+                      fill
+                      className="object-cover"
+                    />
                 </div>
                 <div className="p-4">
                   <h3 className="mb-1 font-semibold">{commissioner.name}</h3>
