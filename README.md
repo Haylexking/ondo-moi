@@ -1,48 +1,45 @@
 # Ondo State Ministry of Information Website
 
-This is the website I built for the Ondo State Ministry of Information and Orientation, built with Next.js and React.
+This is a website I designed and developed for the Ondo State Ministry of Information and Orientation, focused on improving public access to news, resources, and official government communications.
 
+Built with Next.js and React, the project balances performance, accessibility, and modern design principles to serve a wide range of users effectively.
 
-## Project Structure
+---
 
-- `/app` - Next.js App Router pages and layouts
-- `/components` - Reusable React components
-- `/public` - Static assets like images
-- `/lib` - Utility functions and shared code
-- `/hooks` - Custom React hooks
+## 🔧 Tech Stack
 
-## Features
+- Next.js (App Router)
+- React
+- Tailwind CSS
+- Vercel (Deployment)
 
-- Responsive design for all device sizes
-- Server-side rendering for improved SEO
-- Dynamic routing for content pages
-- Interactive components for user engagement
-- Dark mode support
+---
 
-## Deployment
+## ⚙️ Project Structure
 
-The site is configured for deployment on Vercel:
+- `app` – App Router pages and layouts
+- `components` – Reusable React components
+- `public` – Static assets
+- `lib` – Utility functions
+- `hooks` – Custom React hooks
 
-\`\`\`bash
-npm run build
-# or
-yarn build
-\`\`\`
+---
 
-## Contributing
+## 🌟 Key Features
 
-1. Create a feature branch: `git checkout -b feature/your-feature-name`
-2. Commit your changes: `git commit -m 'Add some feature'`
-3. Push to the branch: `git push origin feature/your-feature-name`
-4. Submit a pull request
+- Fully responsive layout across all devices  
+- Server-side rendering for better performance and SEO  
+- Dynamic routing for news and content pages  
+- Interactive components for public engagement  
+- Clean visual structure and accessibility-focused design
 
-## License
+---
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## 🚀 Deployment
 
-## Acknowledgments
+Deployed on Vercel  
+Run locally with:
 
-- Ondo State Ministry of Information and Orientation
-- Next.js team for the amazing framework
-- All contributors to the project
-\`\`\`
+```bash
+npm install
+npm run dev
