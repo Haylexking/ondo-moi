@@ -1,4 +1,4 @@
-import Image from "next/image"
+import SafeImage from "@/components/SafeImage"
 import Link from "next/link"
 import { User, Calendar } from "lucide-react"
 
@@ -20,7 +20,7 @@ const blogPosts: BlogPost[] = [
       "Explore the diverse cultural traditions, festivals, and historical landmarks that make Ondo State a cultural treasure trove in Nigeria.",
     author: "Adebayo Johnson",
     date: "July 15, 2023",
-    image: "/placeholder.svg?height=200&width=350",
+    image: encodeURI("/images/Olotu Orege.png"),
     slug: "cultural-heritage-ondo",
   },
   {
@@ -30,7 +30,7 @@ const blogPosts: BlogPost[] = [
       "Discover the various economic sectors in Ondo State that present lucrative opportunities for local and foreign investors.",
     author: "Funmilayo Adekoya",
     date: "July 8, 2023",
-    image: "/placeholder.svg?height=200&width=350",
+    image: encodeURI("/images/Rectangle 39.png"),
     slug: "investment-opportunities-ondo",
   },
   {
@@ -40,7 +40,7 @@ const blogPosts: BlogPost[] = [
       "From the Idanre Hills to the Oke-Maria Hills, Ondo State is home to numerous natural attractions waiting to be explored by tourists.",
     author: "Tunde Olatunji",
     date: "June 30, 2023",
-    image: "/placeholder.svg?height=200&width=350",
+    image: encodeURI("/images/Rectangle 16.png"),
     slug: "tourism-destinations-ondo",
   },
   {
@@ -50,7 +50,7 @@ const blogPosts: BlogPost[] = [
       "An analysis of the educational landscape in Ondo State, highlighting achievements, ongoing initiatives, and areas for improvement.",
     author: "Dr. Folake Adedeji",
     date: "June 22, 2023",
-    image: "/placeholder.svg?height=200&width=350",
+    image: encodeURI("/images/Hon. Femi Agagu.png"),
     slug: "educational-development-ondo",
   },
 ]
@@ -60,7 +60,7 @@ export default function BlogSection() {
     <section className="bg-gray-50 py-16">
       <div className="container">
         <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-3xl font-bold text-orange-500">Blog</h2>
+          <h2 className="text-3xl font-bold text-orange-500">Blogs</h2>
           <Link href="/blogs" className="text-orange-500 hover:underline">
             See All
           </Link>
@@ -69,11 +69,17 @@ export default function BlogSection() {
           {blogPosts.map((post) => (
             <div
               key={post.id}
-              className="overflow-hidden rounded-lg bg-white shadow-md transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-200/60 transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
             >
               <Link href={`/blogs/${post.slug}`}>
-                <div className="relative h-48 w-full">
-                  <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
+                <div className="relative aspect-[3/2] w-full overflow-hidden bg-gray-100">
+                  <SafeImage
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover object-top transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
               </Link>
               <div className="p-4">

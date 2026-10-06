@@ -1,4 +1,4 @@
-import Image from "next/image"
+import SafeImage from "@/components/SafeImage"
 import Link from "next/link"
 
 interface NewsItem {
@@ -16,7 +16,7 @@ const newsItems: NewsItem[] = [
     title: "Ondo State Government Partners with World Bank on Rural Access and Agricultural Marketing Project",
     category: "DEVELOPMENT",
     date: "July 10, 2023",
-    image: "/placeholder.svg?height=200&width=350",
+    image: encodeURI("/images/Rectangle 39.png"),
     slug: "world-bank-partnership",
   },
   {
@@ -24,7 +24,7 @@ const newsItems: NewsItem[] = [
     title: "Ministry of Information Launches Digital Media Training for Youth in Ondo State",
     category: "EDUCATION",
     date: "July 5, 2023",
-    image: "/placeholder.svg?height=200&width=350",
+    image: encodeURI("/images/Mrs Bamdiele Ademola Olateju.png"),
     slug: "digital-media-training",
   },
   {
@@ -32,7 +32,7 @@ const newsItems: NewsItem[] = [
     title: "Ondo State Celebrates Cultural Day with Exhibition of Arts and Crafts",
     category: "CULTURE",
     date: "June 28, 2023",
-    image: "/placeholder.svg?height=200&width=350",
+    image: encodeURI("/images/Olotu Orege.png"),
     slug: "cultural-day-celebration",
   },
   {
@@ -40,7 +40,7 @@ const newsItems: NewsItem[] = [
     title: "Governor Aiyedatiwa Receives Award for Educational Development in Ondo State",
     category: "EDUCATION",
     date: "June 20, 2023",
-    image: "/placeholder.svg?height=200&width=350",
+    image: encodeURI("/images/Hon. Lucky Orimisan Aiyedatiwa.png"),
     slug: "governor-education-award",
   },
   {
@@ -48,7 +48,7 @@ const newsItems: NewsItem[] = [
     title: "Ondo State Government Unveils New Tourism Masterplan",
     category: "TOURISM",
     date: "June 15, 2023",
-    image: "/placeholder.svg?height=200&width=350",
+    image: encodeURI("/images/Rectangle 16.png"),
     slug: "tourism-masterplan",
   },
   {
@@ -56,7 +56,7 @@ const newsItems: NewsItem[] = [
     title: "Ministry of Health Launches Vaccination Campaign Against Childhood Diseases",
     category: "HEALTH",
     date: "June 8, 2023",
-    image: "/placeholder.svg?height=200&width=350",
+    image: encodeURI("/images/Dr.Banji Awolowo Ajaka.png"),
     slug: "vaccination-campaign",
   },
 ]
@@ -78,8 +78,14 @@ export default function LatestNewsSection() {
               className="overflow-hidden rounded-lg bg-white shadow-md transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <Link href={`/news/${news.slug}`}>
-                <div className="relative h-48 w-full">
-                  <Image src={news.image || "/placeholder.svg"} alt={news.title} fill className="object-cover" />
+                <div className="relative aspect-[3/2] w-full overflow-hidden bg-gray-100">
+                  <SafeImage
+                    src={news.image}
+                    alt={news.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover object-top transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
               </Link>
               <div className="p-4">

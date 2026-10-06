@@ -1,4 +1,4 @@
-import Image from "next/image"
+import SafeImage from "@/components/SafeImage"
 import Link from "next/link"
 import { Twitter, Facebook, Instagram } from "lucide-react"
 
@@ -15,21 +15,21 @@ const socialPosts: SocialPost[] = [
     platform: "twitter",
     content:
       "Governor Aiyedatiwa inspects ongoing road construction projects across Ondo State. The projects are part of the government's commitment to improving infrastructure and enhancing connectivity. #OndoState #Infrastructure",
-    image: "/placeholder.svg?height=200&width=350",
+    image: encodeURI("/images/Hon. Lucky Orimisan Aiyedatiwa.png"),
   },
   {
     id: 2,
     platform: "facebook",
     content:
       "The Ministry of Information and Orientation congratulates all students who participated in the State Schools Quiz Competition. Your dedication to academic excellence is commendable. #OndoEducation #AcademicExcellence",
-    image: "/placeholder.svg?height=200&width=350",
+    image: encodeURI("/images/Hon. Femi Agagu.png"),
   },
   {
     id: 3,
     platform: "instagram",
     content:
       "Beautiful scenes from the Ondo State Cultural Festival held yesterday at the Dome Cultural Center, Akure. The event showcased the rich cultural heritage of our dear state. #OndoCulture #CulturalHeritage",
-    image: "/placeholder.svg?height=200&width=350",
+    image: encodeURI("/images/Olotu Orege.png"),
   },
 ]
 
@@ -79,13 +79,12 @@ export default function SocialMediaSection() {
                 <PlatformIcon platform={post.platform} />
               </div>
               <div className="p-4">
-                <div className="mb-4 overflow-hidden rounded-lg">
-                  <Image
-                    src={post.image || "/placeholder.svg"}
+                <div className="relative mb-4 aspect-[3/2] w-full overflow-hidden rounded-lg bg-gray-100 shadow-inner">
+                  <SafeImage
+                    src={post.image}
                     alt={`${post.platform} post`}
-                    width={350}
-                    height={200}
-                    className="h-auto w-full"
+                    fill
+                    className="object-cover object-top"
                   />
                 </div>
                 <p className="text-sm text-gray-600">{post.content}</p>

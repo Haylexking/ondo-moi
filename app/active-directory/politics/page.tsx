@@ -16,7 +16,7 @@ const executiveCouncilMembers: CouncilMember[] = [
   {
     name: "Hon. Lucky Orimisan Aiyedatiwa",
     title: "Executive Governor of Ondo State",
-    image: "/placeholder.svg?height=150&width=150",
+    image: encodeURI("/images/Hon. Lucky Orimisan Aiyedatiwa.png"),
   },
   {
     name: "Dr. Olayide Owolabi Adelami",
@@ -26,7 +26,17 @@ const executiveCouncilMembers: CouncilMember[] = [
   {
     name: "Princess Catherine Oladunni Odu",
     title: "Secretary to the State Government",
-    image: "/placeholder.svg?height=150&width=150",
+    image: encodeURI("/images/Princess Oladunni Odu.png"),
+  },
+  {
+    name: "Mr. Dare Aragbaye",
+    title: "Special Adviser on Union Matters & Special Duties",
+    image: encodeURI("/images/Mr. Dare Aragbaye.png"),
+  },
+  {
+    name: "Mr. Babajide Akeredolu",
+    title: "DG, Project Implementation Monitoring Unit",
+    image: encodeURI("/images/Mr. Babajide Akeredolu.png"),
   },
   {
     name: "Chief Olugbenga Ale",
@@ -44,7 +54,67 @@ const honourableCommissioners: CouncilMember[] = [
   {
     name: "Mrs. Bamidele Ademola-Olateju",
     title: "Commissioner for Information and Orientation",
-    image: "/placeholder.svg?height=150&width=150",
+    image: encodeURI("/images/Mrs Bamdiele Ademola Olateju.png"),
+  },
+  {
+    name: "Dr. Banji Ajaka",
+    title: "Commissioner for Health",
+    image: encodeURI("/images/Dr.Banji Awolowo Ajaka.png"),
+  },
+  {
+    name: "Engr. Raimi Aminu",
+    title: "Commissioner for Infrastructure, Lands and Housing",
+    image: encodeURI("/images/Engineer Raimi Aminu.png"),
+  },
+  {
+    name: "Hon. Olufemi Agagu",
+    title: "Commissioner for Education, Science and Technology",
+    image: encodeURI("/images/Hon. Femi Agagu.png"),
+  },
+  {
+    name: "Sir Charles Titiloye (SAN)",
+    title: "Attorney General and Commissioner for Justice",
+    image: encodeURI("/images/Sir.Charles Titiloye (SAN).png"),
+  },
+  {
+    name: "Engr. Razaq Obe",
+    title: "Commissioner for Energy, Mines and Mineral Resources",
+    image: encodeURI("/images/Engineer Razaq Obe.png"),
+  },
+  {
+    name: "Pastor Emmanuel Igbasan",
+    title: "Commissioner for Budget and Economic Planning",
+    image: encodeURI("/images/Mr. Emmanuel Igbasan.png"),
+  },
+  {
+    name: "Hon. Adewale Akinlosotu",
+    title: "Commissioner for Local Government and Chieftaincy Affairs",
+    image: encodeURI("/images/Hon. Adewale Akinlosotu.png"),
+  },
+  {
+    name: "Hon. Adegboyega Adefarati",
+    title: "Commissioner for Agriculture and Forestry",
+    image: encodeURI("/images/Hon. Adefarati Adegboyega.png"),
+  },
+  {
+    name: "Hon. Bamidele Ologun",
+    title: "Commissioner for Youth and Sports Development",
+    image: encodeURI("/images/Hon. Bamidele Ologun.png"),
+  },
+  {
+    name: "Mrs. Yetunde Adeyanju",
+    title: "Commissioner for Water Resources, Public Sanitation & Hygiene",
+    image: encodeURI("/images/Mrs. Yetunde Adeyanju.png"),
+  },
+  {
+    name: "Mr. Donald Ojogo",
+    title: "Former Commissioner for Information and Orientation",
+    image: encodeURI("/images/Mr. Donald Ojogo.png"),
+  },
+  {
+    name: "Mr. Adewale Olumuyiwa",
+    title: "Honourable Commissioner",
+    image: encodeURI("/images/Mr. Adewale Olumuyiwa.png"),
   },
   {
     name: "Prince Dayo Awude",
@@ -52,53 +122,8 @@ const honourableCommissioners: CouncilMember[] = [
     image: "/placeholder.svg?height=150&width=150",
   },
   {
-    name: "Dr. Banji Ajaka",
-    title: "Commissioner for Health",
-    image: "/placeholder.svg?height=150&width=150",
-  },
-  {
-    name: "Engr. Raimi Aminu",
-    title: "Commissioner for Infrastructure, Lands and Housing",
-    image: "/placeholder.svg?height=150&width=150",
-  },
-  {
-    name: "Hon. Olufemi Agagu",
-    title: "Commissioner for Education, Science and Technology",
-    image: "/placeholder.svg?height=150&width=150",
-  },
-  {
     name: "Mr. Akinwumi Sowore",
     title: "Commissioner for Commerce, Industry and Cooperative Services",
-    image: "/placeholder.svg?height=150&width=150",
-  },
-  {
-    name: "Sir Charles Titiloye",
-    title: "Attorney General and Commissioner for Justice",
-    image: "/placeholder.svg?height=150&width=150",
-  },
-  {
-    name: "Mr. Wale Akinlosotu",
-    title: "Commissioner for Regional Integration and Diaspora Relations",
-    image: "/placeholder.svg?height=150&width=150",
-  },
-  {
-    name: "Engr. Razaq Obe",
-    title: "Commissioner for Energy, Mines and Mineral Resources",
-    image: "/placeholder.svg?height=150&width=150",
-  },
-  {
-    name: "Pastor Emmanuel Igbasan",
-    title: "Commissioner for Budget and Economic Planning",
-    image: "/placeholder.svg?height=150&width=150",
-  },
-  {
-    name: "Mr. Olugbenga Omole",
-    title: "Commissioner for Youth and Sports Development",
-    image: "/placeholder.svg?height=150&width=150",
-  },
-  {
-    name: "Hon. Adewale Akinlosotu",
-    title: "Commissioner for Local Government and Chieftaincy Affairs",
     image: "/placeholder.svg?height=150&width=150",
   },
 ]
@@ -195,18 +220,18 @@ export default function Politics() {
           <h2 className="mb-6 text-2xl font-bold text-orange-500">Executive Council</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
             {executiveCouncilMembers.map((member, index) => (
-              <div key={index} className="overflow-hidden rounded-lg bg-white shadow">
-                <div className="relative h-48 w-full">
-                    <SafeImage
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                    />
-
+              <div key={index} className="group overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-200/60 transition-all duration-300 hover:shadow-md hover:ring-orange-200">
+                <div className="relative aspect-[3/2] w-full overflow-hidden bg-gray-100">
+                  <SafeImage
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
                 <div className="p-4">
-                  <h3 className="mb-1 font-semibold">{member.name}</h3>
+                  <h3 className="mb-1 font-semibold text-gray-900 transition-colors group-hover:text-orange-600">{member.name}</h3>
                   <p className="text-sm text-gray-500">{member.title}</p>
                 </div>
               </div>
@@ -218,17 +243,18 @@ export default function Politics() {
           <h2 className="mb-6 text-2xl font-bold text-orange-500">Honourable Commissioners</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {honourableCommissioners.map((commissioner, index) => (
-              <div key={index} className="overflow-hidden rounded-lg bg-white shadow">
-                <div className="relative h-48 w-full">
+              <div key={index} className="group overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-200/60 transition-all duration-300 hover:shadow-md hover:ring-orange-200">
+                <div className="relative aspect-[3/2] w-full overflow-hidden bg-gray-100">
                   <SafeImage
-                      src={commissioner.image}
-                      alt={commissioner.name}
-                      fill
-                      className="object-cover"
-                    />
+                    src={commissioner.image}
+                    alt={commissioner.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
                 <div className="p-4">
-                  <h3 className="mb-1 font-semibold">{commissioner.name}</h3>
+                  <h3 className="mb-1 font-semibold text-gray-900 transition-colors group-hover:text-orange-600">{commissioner.name}</h3>
                   <p className="text-sm text-gray-500">{commissioner.title}</p>
                 </div>
               </div>

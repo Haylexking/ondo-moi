@@ -1,4 +1,4 @@
-import Image from "next/image"
+import SafeImage from "@/components/SafeImage"
 import Link from "next/link"
 
 interface PressRelease {
@@ -14,21 +14,21 @@ const pressReleases: PressRelease[] = [
     id: 1,
     title: "Ondo State Government Announces New Measures to Boost Agricultural Production",
     date: "June 15, 2023",
-    image: "/placeholder.svg?height=200&width=350",
+    image: encodeURI("/images/Hon. Adefarati Adegboyega.png"),
     slug: "agricultural-production-measures",
   },
   {
     id: 2,
     title: "Governor Aiyedatiwa Flags Off Construction of Akure-Ado Ekiti Dual Carriageway",
     date: "May 28, 2023",
-    image: "/placeholder.svg?height=200&width=350",
+    image: encodeURI("/images/Hon. Lucky Orimisan Aiyedatiwa.png"),
     slug: "akure-ado-ekiti-road",
   },
   {
     id: 3,
     title: "Ondo State Launches Health Insurance Scheme for Civil Servants",
     date: "April 12, 2023",
-    image: "/placeholder.svg?height=200&width=350",
+    image: encodeURI("/images/Dr.Banji Awolowo Ajaka.png"),
     slug: "health-insurance-scheme",
   },
 ]
@@ -42,11 +42,17 @@ export default function PressReleaseSection() {
           {pressReleases.map((press) => (
             <div
               key={press.id}
-              className="overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-200/60 transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
             >
               <Link href={`/news/${press.slug}`}>
-                <div className="relative h-48 w-full">
-                  <Image src={press.image || "/placeholder.svg"} alt={press.title} fill className="object-cover" />
+                <div className="relative aspect-[3/2] w-full overflow-hidden bg-gray-100">
+                  <SafeImage
+                    src={press.image}
+                    alt={press.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover object-top transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
               </Link>
               <div className="p-4">

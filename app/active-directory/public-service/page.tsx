@@ -1,4 +1,5 @@
 import Image from "next/image"
+import SafeImage from "@/components/SafeImage"
 import Link from "next/link"
 import { Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -34,52 +35,52 @@ const secretariesData = {
 
 const permanentSecretaries: PermanentSecretary[] = [
   {
-    name: "Mrs Bamidele Ademola Olateju",
-    title: "Commissioner Of Information & Orientation",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/placeholder.svg?height=150&width=150",
+    name: "Princess Catherine Oladunni Odu",
+    title: "Secretary to the State Government",
+    description: "Coordinating the state administrative machinery and executive policies.",
+    image: encodeURI("/images/Princess Oladunni Odu.png"),
   },
   {
-    name: "Oluwu Oyeyi",
-    title: "Commissioner Of Information & Orientation",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/placeholder.svg?height=150&width=150",
+    name: "Mrs. Bamidele Ademola-Olateju",
+    title: "Commissioner for Information & Orientation",
+    description: "Leading state communications, strategic orientation, and public enlightenment.",
+    image: encodeURI("/images/Mrs Bamdiele Ademola Olateju.png"),
   },
   {
-    name: "Dr Kunj Josehine Ajala",
-    title: "Commissioner Of Information & Orientation",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/placeholder.svg?height=150&width=150",
+    name: "Mr. Dare Aragbaye",
+    title: "Special Adviser on Union Matters & Special Duties",
+    description: "Fostering labour relations and public sector productivity.",
+    image: encodeURI("/images/Mr. Dare Aragbaye.png"),
   },
   {
-    name: "Engineer Rotimi Agbede",
-    title: "Commissioner Of Information & Orientation",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/placeholder.svg?height=150&width=150",
+    name: "Mr. Babajide Akeredolu",
+    title: "DG, Project Implementation Monitoring Unit",
+    description: "Spearheading milestone tracking and governance infrastructure delivery.",
+    image: encodeURI("/images/Mr. Babajide Akeredolu.png"),
   },
   {
-    name: "Hon. Bamidele Olugbon",
-    title: "Commissioner Of Information & Orientation",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/placeholder.svg?height=150&width=150",
+    name: "Sir Charles Titiloye (SAN)",
+    title: "Attorney General & Commissioner for Justice",
+    description: "Preserving rule of law and statutory legal affairs for the state.",
+    image: encodeURI("/images/Sir.Charles Titiloye (SAN).png"),
   },
   {
-    name: "Mr. Isaac Ayodele",
-    title: "Commissioner Of Information & Orientation",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/placeholder.svg?height=150&width=150",
+    name: "Pastor Emmanuel Igbasan",
+    title: "Commissioner for Budget & Economic Planning",
+    description: "Strategic state fiscal framework, resource allocation, and planning.",
+    image: encodeURI("/images/Mr. Emmanuel Igbasan.png"),
   },
   {
-    name: "Sir. Babajide Akeredolu",
-    title: "Commissioner Of Information & Orientation",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/placeholder.svg?height=150&width=150",
+    name: "Engr. Raimi Aminu",
+    title: "Commissioner for Infrastructure, Lands & Housing",
+    description: "Directing public works, urban development, and structural initiatives.",
+    image: encodeURI("/images/Engineer Raimi Aminu.png"),
   },
   {
-    name: "Hon. Adelami Ayodelugba",
-    title: "Commissioner Of Information & Orientation",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/placeholder.svg?height=150&width=150",
+    name: "Hon. Adewale Akinlosotu",
+    title: "Commissioner for Local Government & Chieftaincy Affairs",
+    description: "Strengthening grassroots community administration and traditional councils.",
+    image: encodeURI("/images/Hon. Adewale Akinlosotu.png"),
   },
 ]
 
@@ -179,22 +180,23 @@ export default function PublicService() {
         </section>
 
         <section>
-          <h2 className="mb-8 text-2xl font-bold text-orange-500">Permanent Secretaries</h2>
+          <h2 className="mb-8 text-2xl font-bold text-orange-500">Permanent Secretaries & Principal Officers</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {permanentSecretaries.map((secretary, index) => (
-              <div key={index} className="overflow-hidden rounded-lg bg-white shadow">
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={secretary.image || "/placeholder.svg"}
+              <div key={index} className="group overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-200/60 transition-all duration-300 hover:shadow-md hover:ring-orange-200">
+                <div className="relative aspect-[3/2] w-full overflow-hidden bg-gray-100">
+                  <SafeImage
+                    src={secretary.image}
                     alt={secretary.name}
                     fill
-                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-4">
-                  <h3 className="mb-1 font-semibold">{secretary.name}</h3>
-                  <p className="mb-2 text-sm text-orange-500">{secretary.title}</p>
-                  <p className="text-xs text-gray-500">{secretary.description}</p>
+                  <h3 className="mb-1 font-semibold text-gray-900 transition-colors group-hover:text-orange-600">{secretary.name}</h3>
+                  <p className="mb-2 text-xs font-medium text-orange-500">{secretary.title}</p>
+                  <p className="text-xs text-gray-500 line-clamp-2">{secretary.description}</p>
                 </div>
               </div>
             ))}

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
+import SafeImage from "@/components/SafeImage"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -17,7 +17,7 @@ interface SlideProps {
 const slides: SlideProps[] = [
   {
     id: 1,
-    image: "/placeholder.svg?height=500&width=1200",
+    image: encodeURI("/images/Hon. Lucky Orimisan Aiyedatiwa.png"),
     category: "GOVERNANCE",
     title: "Governor Aiyedatiwa Inaugurates New Cabinet Members",
     excerpt:
@@ -26,16 +26,16 @@ const slides: SlideProps[] = [
   },
   {
     id: 2,
-    image: "/placeholder.svg?height=500&width=1200",
+    image: encodeURI("/images/Rectangle 39.png"),
     category: "INFRASTRUCTURE",
-    title: "Ondo State Commissions 50km Road Network Across Three Local Governments",
+    title: "Ondo State Commissions Road Networks and Strategic Infrastructure",
     excerpt:
-      "In a move to boost economic activities and ease transportation, the Ondo State Government has commissioned newly constructed road networks.",
+      "In a move to boost economic activities and ease transportation, the Ondo State Government accelerates state-wide infrastructure delivery.",
     link: "/news/road-network-commissioned",
   },
   {
     id: 3,
-    image: "/placeholder.svg?height=500&width=1200",
+    image: encodeURI("/images/Hon. Femi Agagu.png"),
     category: "EDUCATION",
     title: "Ondo State Launches Digital Learning Initiative for Public Schools",
     excerpt:
@@ -73,8 +73,8 @@ export default function HeroSlider() {
           )}
         >
           <div className="relative h-full w-full">
-            <Image
-              src={slide.image || "/placeholder.svg"}
+            <SafeImage
+              src={slide.image}
               alt={slide.title}
               fill
               className="object-cover"

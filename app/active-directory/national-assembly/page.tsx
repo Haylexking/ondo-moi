@@ -1,4 +1,5 @@
 import Image from "next/image"
+import SafeImage from "@/components/SafeImage"
 import Link from "next/link"
 import { Search, Twitter, Facebook, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -29,20 +30,21 @@ const senatorsData = {
 }
 
 const representativesData = {
-  "2018-2023": [
-    { name: "Senator Ayo Akinyelure", district: "Ondo Central" },
-    { name: "Senator Nicholas Tofowomo", district: "Ondo South" },
-    { name: "Senator (Prof.) Ajayi Boroffice", district: "Ondo North" },
+  "2023-Date": [
+    { name: "Hon. Donald Ojogo", district: "Ilaje/Ese-Odo Federal Constituency" },
+    { name: "Hon. Adegboyega Adefarati", district: "Akoko South West/South East" },
+    { name: "Hon. Timehin Adelegbe", district: "Owo/Ose Federal Constituency" },
+    { name: "Hon. Festus Adefiranye", district: "Ile-Oluji/Okeigbo/Odigbo" },
+  ],
+  "2019-2023": [
+    { name: "Hon. Mayowa Akinfolarin", district: "Ile-Oluji/Okeigbo/Odigbo" },
+    { name: "Hon. Timehin Adelegbe", district: "Owo/Ose Federal Constituency" },
+    { name: "Hon. Peter Akpatason", district: "Akoko South West/South East" },
   ],
   "2015-2019": [
-    { name: "Senator Ayo Akinyelure", district: "Ondo Central" },
-    { name: "Senator Nicholas Tofowomo", district: "Ondo South" },
-    { name: "Senator (Prof.) Ajayi Boroffice", district: "Ondo North" },
-  ],
-  "2011-2015": [
-    { name: "Senator Ayo Akinyelure", district: "Ondo Central" },
-    { name: "Senator Nicholas Tofowomo", district: "Ondo South" },
-    { name: "Senator (Prof.) Ajayi Boroffice", district: "Ondo North" },
+    { name: "Hon. Kolade Akinjo", district: "Ilaje/Ese-Odo Federal Constituency" },
+    { name: "Hon. Babatunde Kolawole", district: "Akoko South West/South East" },
+    { name: "Hon. Bode Ayorinde", district: "Owo/Ose Federal Constituency" },
   ],
 }
 
@@ -50,34 +52,34 @@ const newsItems = [
   {
     id: 1,
     title:
-      "COVID-19: AKEREDOLU'S AIDE, ASADE DONATES FOOD ITEMS, WASHING HAND BUCKETS AND NOSE MASKS TO RESIDENTS IN AKURE",
-    image: "/placeholder.svg?height=100&width=100",
-    category: "BUSINESS",
-    date: "AUGUST 18, 2023",
+      "GOVERNOR AIYEDATIWA COMMENDS ONDO CAUCUS AT NATIONAL ASSEMBLY FOR STATE DEVELOPMENT ADVOCACY",
+    image: encodeURI("/images/Hon. Lucky Orimisan Aiyedatiwa.png"),
+    category: "GOVERNANCE",
+    date: "OCTOBER 15, 2024",
   },
   {
     id: 2,
     title:
-      "COVID-19: AKEREDOLU'S AIDE, ASADE DONATES FOOD ITEMS, WASHING HAND BUCKETS AND NOSE MASKS TO RESIDENTS IN AKURE",
-    image: "/placeholder.svg?height=100&width=100",
-    category: "BUSINESS",
-    date: "AUGUST 18, 2023",
+      "REP. DONALD OJOGO CHAMPIONS RIVERS & WATERWAYS EMPOWERMENT BILL FOR RIVERINE COMMUNITIES",
+    image: encodeURI("/images/Mr. Donald Ojogo.png"),
+    category: "NATIONAL ASSEMBLY",
+    date: "NOVEMBER 04, 2024",
   },
   {
     id: 3,
     title:
-      "COVID-19: AKEREDOLU'S AIDE, ASADE DONATES FOOD ITEMS, WASHING HAND BUCKETS AND NOSE MASKS TO RESIDENTS IN AKURE",
-    image: "/placeholder.svg?height=100&width=100",
-    category: "BUSINESS",
-    date: "AUGUST 18, 2023",
+      "REP. ADEGBOYEGA ADEFARATI FLAGS OFF AGRICULTURAL SCHOLARSHIP AND EMPOWERMENT DRIVE",
+    image: encodeURI("/images/Hon. Adefarati Adegboyega.png"),
+    category: "EMPOWERMENT",
+    date: "JANUARY 12, 2024",
   },
   {
     id: 4,
     title:
-      "COVID-19: AKEREDOLU'S AIDE, ASADE DONATES FOOD ITEMS, WASHING HAND BUCKETS AND NOSE MASKS TO RESIDENTS IN AKURE",
-    image: "/placeholder.svg?height=100&width=100",
-    category: "BUSINESS",
-    date: "AUGUST 18, 2023",
+      "ONDO LEADERS REFLECT ON LATE GOVERNOR ROTIMI AKEREDOLU'S ENDURING INFRASTRUCTURE LEGACIES",
+    image: encodeURI("/images/Akeredolu Oluwarotimi Odunayo.png"),
+    category: "SPECIAL REPORT",
+    date: "MARCH 20, 2024",
   },
 ]
 
@@ -212,8 +214,8 @@ export default function NationalAssembly() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {newsItems.map((item) => (
               <div key={item.id} className="flex gap-4">
-                <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg">
-                  <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover" />
+                <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100 shadow-sm ring-1 ring-gray-200/60">
+                  <SafeImage src={item.image} alt={item.title} fill className="object-cover object-top" />
                 </div>
                 <div>
                   <div className="mb-1">

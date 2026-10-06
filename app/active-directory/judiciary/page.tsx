@@ -1,4 +1,5 @@
 import Image from "next/image"
+import SafeImage from "@/components/SafeImage"
 import Link from "next/link"
 import { Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -15,40 +16,45 @@ const courtOfAppealMembers: JudiciaryMember[] = [
   {
     name: "Akeredolu Oluwarotimi Odunayo",
     title: "Chief Judge",
-    image: "/placeholder.svg?height=150&width=150",
+    image: encodeURI("/images/Akeredolu Oluwarotimi Odunayo.png"),
   },
   {
     name: "Hon. Lucky Orimisan Aiyedatiwa",
     title: "Chief Judge",
-    image: "/placeholder.svg?height=150&width=150",
+    image: encodeURI("/images/Hon. Lucky Orimisan Aiyedatiwa.png"),
   },
   {
     name: "Princess Oladunni Odu",
     title: "Chief Judge",
-    image: "/placeholder.svg?height=150&width=150",
+    image: encodeURI("/images/Princess Oladunni Odu.png"),
   },
 ]
 
 const honourableCommissioners: JudiciaryMember[] = [
   {
+    name: "Sir Charles Titiloye (SAN)",
+    title: "Attorney General & Commissioner for Justice",
+    image: encodeURI("/images/Sir.Charles Titiloye (SAN).png"),
+  },
+  {
     name: "Mr. Adewale Olumuyiwa",
     title: "Commissioner",
-    image: "/placeholder.svg?height=150&width=150",
+    image: encodeURI("/images/Mr. Adewale Olumuyiwa.png"),
   },
   {
     name: "Mr. Emmanuel Igbasan",
     title: "Commissioner",
-    image: "/placeholder.svg?height=150&width=150",
+    image: encodeURI("/images/Mr. Emmanuel Igbasan.png"),
   },
   {
     name: "Hon. Femi Agagu",
     title: "Commissioner",
-    image: "/placeholder.svg?height=150&width=150",
+    image: encodeURI("/images/Hon. Femi Agagu.png"),
   },
   {
     name: "Mrs. Yetunde Adeyanju",
     title: "Commissioner",
-    image: "/placeholder.svg?height=150&width=150",
+    image: encodeURI("/images/Mrs. Yetunde Adeyanju.png"),
   },
 ]
 
@@ -149,12 +155,18 @@ export default function Judiciary() {
           <h2 className="mb-6 text-2xl font-bold text-orange-500">Court of Appeal</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
             {courtOfAppealMembers.map((member, index) => (
-              <div key={index} className="overflow-hidden rounded-lg bg-white shadow">
-                <div className="relative h-48 w-full">
-                  <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
+              <div key={index} className="group overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-200/60 transition-all duration-300 hover:shadow-md hover:ring-orange-200">
+                <div className="relative aspect-[3/2] w-full overflow-hidden bg-gray-100">
+                  <SafeImage
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
                 <div className="p-4">
-                  <h3 className="mb-1 font-semibold">{member.name}</h3>
+                  <h3 className="mb-1 font-semibold text-gray-900 transition-colors group-hover:text-orange-600">{member.name}</h3>
                   <p className="text-sm text-gray-500">{member.title}</p>
                 </div>
               </div>
@@ -166,17 +178,18 @@ export default function Judiciary() {
           <h2 className="mb-6 text-2xl font-bold text-orange-500">Honourable Commissioners</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {honourableCommissioners.map((commissioner, index) => (
-              <div key={index} className="overflow-hidden rounded-lg bg-white shadow">
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={commissioner.image || "/placeholder.svg"}
+              <div key={index} className="group overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-200/60 transition-all duration-300 hover:shadow-md hover:ring-orange-200">
+                <div className="relative aspect-[3/2] w-full overflow-hidden bg-gray-100">
+                  <SafeImage
+                    src={commissioner.image}
                     alt={commissioner.name}
                     fill
-                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-4">
-                  <h3 className="mb-1 font-semibold">{commissioner.name}</h3>
+                  <h3 className="mb-1 font-semibold text-gray-900 transition-colors group-hover:text-orange-600">{commissioner.name}</h3>
                   <p className="text-sm text-gray-500">{commissioner.title}</p>
                 </div>
               </div>

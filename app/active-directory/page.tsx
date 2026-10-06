@@ -1,4 +1,5 @@
 import Image from "next/image"
+import SafeImage from "@/components/SafeImage"
 import Link from "next/link"
 import { Search, Twitter, Facebook, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -148,18 +149,16 @@ export default function ActiveDirectory() {
                 <Twitter className="h-5 w-5 text-blue-400" />
               </div>
               <div className="p-4">
-                <div className="mb-4 overflow-hidden rounded-lg">
-                  <Image
-                    src="/placeholder.svg?height=200&width=350"
-                    alt="Twitter post"
-                    width={350}
-                    height={200}
-                    className="h-auto w-full"
+                <div className="relative mb-4 aspect-[3/2] w-full overflow-hidden rounded-lg bg-slate-900 shadow-inner">
+                  <SafeImage
+                    src={encodeURI("/images/Rectangle 39.png")}
+                    alt="Ondo State Government updates"
+                    fill
+                    className="object-cover object-top"
                   />
                 </div>
                 <p className="mb-4 text-sm text-gray-300">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis,
-                  lectus magna fringilla urna, porttitor.
+                  Stay updated with official governance insights and state initiatives directly from the Sunshine State Ministry of Information.
                 </p>
                 <Link href="#" className="flex items-center gap-1 text-sm text-blue-400 hover:underline">
                   See more <Twitter className="h-4 w-4" />
@@ -173,18 +172,16 @@ export default function ActiveDirectory() {
                 <Facebook className="h-5 w-5 text-blue-600" />
               </div>
               <div className="p-4">
-                <div className="mb-4 overflow-hidden rounded-lg">
-                  <Image
-                    src="/placeholder.svg?height=200&width=350"
-                    alt="Facebook post"
-                    width={350}
-                    height={200}
-                    className="h-auto w-full"
+                <div className="relative mb-4 aspect-[3/2] w-full overflow-hidden rounded-lg bg-slate-900 shadow-inner">
+                  <SafeImage
+                    src={encodeURI("/images/Rectangle 16.png")}
+                    alt="Ondo MOI Facebook post"
+                    fill
+                    className="object-cover object-top"
                   />
                 </div>
                 <p className="mb-4 text-sm text-gray-300">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis,
-                  lectus magna fringilla urna, porttitor.
+                  Connecting citizens with policy milestones, cultural achievements, and grassroots developments across Ondo State.
                 </p>
                 <Link href="#" className="flex items-center gap-1 text-sm text-blue-600 hover:underline">
                   See more <Facebook className="h-4 w-4" />
@@ -198,18 +195,16 @@ export default function ActiveDirectory() {
                 <Instagram className="h-5 w-5 text-pink-500" />
               </div>
               <div className="p-4">
-                <div className="mb-4 overflow-hidden rounded-lg">
-                  <Image
-                    src="/placeholder.svg?height=200&width=350"
-                    alt="Instagram post"
-                    width={350}
-                    height={200}
-                    className="h-auto w-full"
+                <div className="relative mb-4 aspect-[3/2] w-full overflow-hidden rounded-lg bg-slate-900 shadow-inner">
+                  <SafeImage
+                    src={encodeURI("/images/Rectangle 16-1.png")}
+                    alt="Ondo MOI Instagram post"
+                    fill
+                    className="object-cover object-top"
                   />
                 </div>
                 <p className="mb-4 text-sm text-gray-300">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis,
-                  lectus magna fringilla urna, porttitor.
+                  Follow the visual journey of Ondo State infrastructure, governance transformations, and community initiatives.
                 </p>
                 <Link href="#" className="flex items-center gap-1 text-sm text-pink-500 hover:underline">
                   See more <Instagram className="h-4 w-4" />
