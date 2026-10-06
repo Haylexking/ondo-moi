@@ -11,39 +11,39 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Mrs. Bamidele Ademola-Olateju",
-    position: "Honourable Commissioner for Information & Orientation",
-    image: encodeURI("/images/Mrs Bamdiele Ademola Olateju.png"),
-  },
-  {
-    id: 2,
     name: "Hon. Lucky Orimisan Aiyedatiwa",
     position: "Executive Governor of Ondo State",
     image: encodeURI("/images/Hon. Lucky Orimisan Aiyedatiwa.png"),
   },
   {
+    id: 2,
+    name: "Chief Olayide Owolabi Adelami",
+    position: "Deputy Governor of Ondo State",
+    image: "/images/ondo-official-seal.svg",
+  },
+  {
     id: 3,
-    name: "Princess Catherine Oladunni Odu",
-    position: "Secretary to the State Government",
-    image: encodeURI("/images/Princess Oladunni Odu.png"),
+    name: "Dr. Taiwo Olumide Fasoranti",
+    position: "Secretary to the State Government (SSG)",
+    image: "/images/ondo-official-seal.svg",
   },
   {
     id: 4,
-    name: "Sir Charles Titiloye (SAN)",
-    position: "Attorney General & Commissioner for Justice",
-    image: encodeURI("/images/Sir.Charles Titiloye (SAN).png"),
+    name: "Hon. Idowu Ajanaku",
+    position: "Honourable Commissioner for Information & Orientation",
+    image: "/images/ondo-official-seal.svg",
   },
   {
     id: 5,
-    name: "Dr. Banji Awolowo Ajaka",
-    position: "Commissioner for Health",
-    image: encodeURI("/images/Dr.Banji Awolowo Ajaka.png"),
+    name: "Dr. Olukayode Ajulo (SAN)",
+    position: "Attorney General & Commissioner for Justice",
+    image: "/images/ondo-official-seal.svg",
   },
   {
     id: 6,
-    name: "Engr. Raimi Aminu",
-    position: "Commissioner for Infrastructure, Lands & Housing",
-    image: encodeURI("/images/Engineer Raimi Aminu.png"),
+    name: "Dr. Banji Awolowo Ajaka",
+    position: "Commissioner for Health",
+    image: encodeURI("/images/Dr.Banji Awolowo Ajaka.png"),
   },
   {
     id: 7,
@@ -91,63 +91,36 @@ export default function AboutUs() {
 
         <section className="mb-12">
           <h2 className="mb-6 text-2xl font-bold text-orange-500">Our Mission</h2>
-          <div className="prose max-w-none">
+          <div className="prose max-w-none text-gray-700 leading-relaxed space-y-4">
             <p>
-              Quis faucibus justo iaculis augue tellus. Viverra id tristique consectetur eget nisi. Sapien aliquam in
-              nisl posuere incorper. Purus morbi nulla auctor velit sit consequat. Urna se ulputate luctus arcu quis
-              arcu. Felis cursus et lorem quam donec iaculis. Purus morbi nulla auctor velit sit consequat. Urna se
-              ulputate luctus arcu quis arcu. Felis cursus et lorem quam donec iaculis. Purus morbi nulla auctor velit
-              sit consequat. Urna se ulputate luctus arcu quis arcu. Felis cursus et lorem quam donec iaculis.
+              To foster transparent, timely, and credible two-way communication between the Ondo State Government and its citizens. We deploy modern public relations channels, digital media networks, and grassroots town halls to promote civic awareness, foster social cohesion, and encourage constructive public participation in state governance.
             </p>
             <p>
-              Quis faucibus justo iaculis augue tellus. Viverra id tristique consectetur eget nisi. Sapien aliquam in
-              nisl posuere incorper. Purus morbi nulla auctor velit sit consequat. Urna se ulputate luctus arcu quis
-              arcu. Felis cursus et lorem quam donec iaculis. Purus morbi nulla auctor velit sit consequat. Urna se
-              ulputate luctus arcu quis arcu. Felis cursus et lorem quam donec iaculis.
+              Through professional journalistic standards, verifiable reporting, and strategic policy orientation, we safeguard public trust and illuminate the socio-economic transformations taking place across Ondo State under the administration of Governor Lucky Orimisan Aiyedatiwa.
             </p>
           </div>
         </section>
 
         <section className="mb-12">
           <h2 className="mb-6 text-2xl font-bold text-orange-500">Our Vision</h2>
-          <div className="prose max-w-none">
+          <div className="prose max-w-none text-gray-700 leading-relaxed space-y-4">
             <p>
-              Quis faucibus justo iaculis augue tellus. Viverra id tristique consectetur eget nisi. Sapien aliquam in
-              nisl posuere incorper. Purus morbi nulla auctor velit sit consequat. Urna se ulputate luctus arcu quis
-              arcu. Felis cursus et lorem quam donec iaculis. Purus morbi nulla auctor velit sit consequat. Urna se
-              ulputate luctus arcu quis arcu. Felis cursus et lorem quam donec iaculis. Purus morbi nulla auctor velit
-              sit consequat. Urna se ulputate luctus arcu quis arcu. Felis cursus et lorem quam donec iaculis.
+              To build a digitally empowered, proactive, and citizen-first public information apparatus that positions Ondo State as an exemplary model of democratic transparency, cultural pride, and civic engagement in Nigeria and beyond.
             </p>
             <p>
-              Quis faucibus justo iaculis augue tellus. Viverra id tristique consectetur eget nisi. Sapien aliquam in
-              nisl posuere incorper. Purus morbi nulla auctor velit sit consequat. Urna se ulputate luctus arcu quis
-              arcu. Felis cursus et lorem quam donec iaculis. Purus morbi nulla auctor velit sit consequat. Urna se
-              ulputate luctus arcu quis arcu. Felis cursus et lorem quam donec iaculis.
+              We envision an enlightened citizenry that actively participates in policymaking, understands public sector stewardship, and champions the collective developmental milestones of the Sunshine State.
             </p>
           </div>
         </section>
 
         <section className="mb-12">
-          <h2 className="mb-6 text-2xl font-bold text-orange-500">The Ministry</h2>
-          <div className="prose max-w-none">
+          <h2 className="mb-6 text-2xl font-bold text-orange-500">The Ministry Mandate &amp; Core Functions</h2>
+          <div className="prose max-w-none text-gray-700 leading-relaxed space-y-4">
             <p>
-              Quis faucibus justo iaculis augue tellus. Viverra id tristique consectetur eget nisi. Sapien aliquam in
-              nisl posuere incorper. Purus morbi nulla auctor velit sit consequat. Urna se ulputate luctus arcu quis
-              arcu. Felis cursus et lorem quam donec iaculis. Purus morbi nulla auctor velit sit consequat. Urna se
-              ulputate luctus arcu quis arcu. Felis cursus et lorem quam donec iaculis. Purus morbi nulla auctor velit
-              sit consequat. Urna se ulputate luctus arcu quis arcu. Felis cursus et lorem quam donec iaculis.
+              Established as the authoritative public information organ of the Ondo State Government, the Ministry of Information and Orientation oversees government broadcast stations, print publications, digital portals, and official executive communications.
             </p>
             <p>
-              Quis faucibus justo iaculis augue tellus. Viverra id tristique consectetur eget nisi. Sapien aliquam in
-              nisl posuere incorper. Purus morbi nulla auctor velit sit consequat. Urna se ulputate luctus arcu quis
-              arcu. Felis cursus et lorem quam donec iaculis. Purus morbi nulla auctor velit sit consequat. Urna se
-              ulputate luctus arcu quis arcu. Felis cursus et lorem quam donec iaculis.
-            </p>
-            <p>
-              Quis faucibus justo iaculis augue tellus. Viverra id tristique consectetur eget nisi. Sapien aliquam in
-              nisl posuere incorper. Purus morbi nulla auctor velit sit consequat. Urna se ulputate luctus arcu quis
-              arcu. Felis cursus et lorem quam donec iaculis. Purus morbi nulla auctor velit sit consequat. Urna se
-              ulputate luctus arcu quis arcu. Felis cursus et lorem quam donec iaculis.
+              Our statutory functions include managing public enlightenment campaigns on state health, education, and infrastructural policies; providing protocol and press coverage for executive state engagements; regulating public advertising across municipalities; and documenting Ondo State&apos;s rich historical and cultural archives for future generations.
             </p>
           </div>
         </section>

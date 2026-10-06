@@ -23,7 +23,7 @@ export default function SafeImage({ src, alt, className, ...props }: ImageProps)
     <Image
       {...props}
       src={formatImageUrl(imgSrc)}
-      onError={() => setImgSrc("/placeholder.svg?height=150&width=150")}
+      onError={() => setImgSrc("/images/ondo-official-seal.svg")}
       alt={alt || "Ondo State official portrait"}
       className={className}
     />

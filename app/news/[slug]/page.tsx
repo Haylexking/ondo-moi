@@ -1,4 +1,4 @@
-import Image from "next/image"
+import SafeImage from "@/components/SafeImage"
 import Link from "next/link"
 import { Calendar, Facebook, Twitter, Linkedin } from "lucide-react"
 import NewsletterSection from "@/components/newsletter-section"
@@ -12,66 +12,46 @@ interface NewsPostProps {
 export default function NewsPost({ params }: NewsPostProps) {
   // In a real app, you would fetch the post data based on the slug
   const post = {
-    title: "Breakthrough in Energy: Solar-Powered Cars Now a Reality",
-    subtitle: "Innovative Technology Paves the Way for Environmentally-Friendly Transportation",
-    category: "FINANCE",
-    author: "Taiwo Adekola",
-    authorImage: "/placeholder.svg?height=50&width=50",
-    date: "JULY 23, 2023",
-    image: "/placeholder.svg?height=500&width=1200",
+    title: "Ondo State Approves N3.5 Billion for Rural Feeder Roads and Agricultural Access",
+    subtitle: "State Executive Council Approves Major Capital Investments Across All Senatorial Districts",
+    category: "INFRASTRUCTURE",
+    author: "Directorate of Information",
+    authorImage: "/images/ondo-official-seal.svg",
+    date: "OCTOBER 15, 2024",
+    image: "/images/ondo-official-seal.svg",
     content: `
-      <p>In a groundbreaking development for the automotive industry and the environment, engineers and scientists have unveiled a revolutionary solar-powered car that promises to reshape the future of transportation. The unveiling took place at the SolarTech Expo, a prestigious event showcasing cutting-edge solar innovations.</p>
+      <p>The Ondo State Executive Council, presided over by Governor Lucky Orimisan Aiyedatiwa, has approved the immediate disbursement and commencement of extensive rural road rehabilitation networks aimed at facilitating agro-commodity transportation.</p>
       
-      <p>The brainchild of a collaboration between leading automaker SolarDrive Inc. and solar technology giant SunPower Solutions, this futuristic vehicle is equipped with cutting-edge photovoltaic cells integrated into its body, harnessing the power of the sun to propel itself forward.</p>
+      <p>Speaking to State House correspondents after the executive council session in Akure, the Commissioner for Information and Orientation, Hon. Idowu Ajanaku, stated that the initiative is an intentional pillar of the administration's economic blueprint.</p>
       
-      <p>Speaking at the event, Dr. Amelia Roberts, described the project as a "milestone in sustainable transportation." She explained, "Our solar-powered car marks a significant step toward reducing our reliance on fossil fuels, curbing carbon emissions, and combating climate change."</p>
-      
-      <h2>How it Works</h2>
-      
-      <p>The solar-powered car, known as the 'SunRider,' features a sleek, aerodynamic design with solar panels covering its entire surface area. These advanced solar panels capture sunlight during the day, converting it into electricity to charge the vehicle's batteries. The stored energy can be used for driving, even during cloudy days or at night.</p>
-      
-      <h2>Key Features</h2>
-      
+      <h2>Focus Corridors</h2>
       <ul>
-        <li>Zero Emissions: The SunRider is a zero-emission vehicle, emitting no harmful greenhouse gases during operation.</li>
-        <li>Long-Range: Thanks to its efficient energy conversion and storage system, the car boasts an impressive range on a single charge.</li>
-        <li>Regenerative Braking: The SunRider incorporates regenerative braking technology, further enhancing its energy efficiency.</li>
+        <li>Northern Senatorial District: Akoko agrarian routes and food logistics corridors.</li>
+        <li>Central Senatorial District: Farming clusters linking Idanre, Ondo town, and Akure metropolis.</li>
+        <li>Southern Senatorial District: Coastal road stabilization and riverine jetty improvements.</li>
       </ul>
-      
-      <h2>Industry Experts Weigh In</h2>
-      
-      <p>Prominent environmentalist and advocate for renewable energy, Dr. Michael Turner, praised the innovation, saying: "The SunRider demonstrates the immense potential of solar technology in addressing the environmental challenges we face. It's a game-changer for clean transportation."</p>
-      
-      <h2>The Road Ahead</h2>
-      
-      <p>SolarDrive Inc. and SunPower Solutions are currently finalizing production plans for the SunRider, with expectations of rolling out the first batch of solar-powered cars within the next year. Industry analysts predict a surge in demand as eco-conscious consumers seek sustainable alternatives to traditional vehicles.</p>
-      
-      <p>As the world grapples with the climate crisis, the SunRider offers a glimmer of hope, highlighting the innovative solutions that could lead us to a cleaner, greener future.</p>
     `,
     relatedPosts: [
       {
         id: 1,
-        title:
-          "COVID-19: Akeredolu's Aide, Asade Donates Food Items, Washing Hand Buckets And Nose Masks To Residents In Akure",
-        date: "August 18, 2023",
-        image: "/placeholder.svg?height=200&width=350",
-        slug: "covid-19-akeredolus-aide-1",
+        title: "Ondo Deep Seaport: Port Authority and Investor Consortium Finalize Operational Agreements",
+        date: "October 12, 2024",
+        image: "/images/ondo-official-seal.svg",
+        slug: "ondo-deep-seaport-agreements",
       },
       {
         id: 2,
-        title:
-          "COVID-19: Akeredolu's Aide, Asade Donates Food Items, Washing Hand Buckets And Nose Masks To Residents In Akure",
-        date: "August 18, 2023",
-        image: "/placeholder.svg?height=200&width=350",
-        slug: "covid-19-akeredolus-aide-2",
+        title: "Gov. Aiyedatiwa Assures Ondo Civil Servants of Uninterrupted Wage and Pension Payments",
+        date: "October 08, 2024",
+        image: "/images/ondo-official-seal.svg",
+        slug: "civil-service-pension-assurance",
       },
       {
         id: 3,
-        title:
-          "COVID-19: Akeredolu's Aide, Asade Donates Food Items, Washing Hand Buckets And Nose Masks To Residents In Akure",
-        date: "August 18, 2023",
-        image: "/placeholder.svg?height=200&width=350",
-        slug: "covid-19-akeredolus-aide-3",
+        title: "Ministry of Health Deploys Medical Consumables and Solar Freezers to Primary Clinics",
+        date: "October 05, 2024",
+        image: "/images/ondo-official-seal.svg",
+        slug: "health-solar-clinics-deployment",
       },
     ],
   }
@@ -79,7 +59,7 @@ export default function NewsPost({ params }: NewsPostProps) {
   return (
     <>
       <div className="relative h-[500px] w-full">
-        <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" priority />
+        <SafeImage src={post.image || encodeURI("/images/Hon. Lucky Orimisan Aiyedatiwa.png")} alt={post.title} fill className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
         <div className="absolute inset-0 flex items-center">
           <div className="container">
@@ -92,8 +72,8 @@ export default function NewsPost({ params }: NewsPostProps) {
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
                   <div className="relative h-10 w-10 overflow-hidden rounded-full">
-                    <Image
-                      src={post.authorImage || "/placeholder.svg"}
+                    <SafeImage
+                      src={post.authorImage || "/images/ondo-official-seal.svg"}
                       alt={post.author}
                       fill
                       className="object-cover"
@@ -162,8 +142,8 @@ export default function NewsPost({ params }: NewsPostProps) {
               >
                 <Link href={`/news/${related.slug}`}>
                   <div className="relative h-48 w-full">
-                    <Image
-                      src={related.image || "/placeholder.svg"}
+                    <SafeImage
+                      src={related.image || "/images/ondo-official-seal.svg"}
                       alt={related.title}
                       fill
                       className="object-cover"

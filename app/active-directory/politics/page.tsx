@@ -19,14 +19,24 @@ const executiveCouncilMembers: CouncilMember[] = [
     image: encodeURI("/images/Hon. Lucky Orimisan Aiyedatiwa.png"),
   },
   {
-    name: "Dr. Olayide Owolabi Adelami",
+    name: "Chief Olayide Owolabi Adelami",
     title: "Deputy Governor of Ondo State",
-    image: "/placeholder.svg?height=150&width=150",
+    image: "/images/ondo-official-seal.svg",
   },
   {
-    name: "Princess Catherine Oladunni Odu",
-    title: "Secretary to the State Government",
-    image: encodeURI("/images/Princess Oladunni Odu.png"),
+    name: "Dr. Taiwo Olumide Fasoranti",
+    title: "Secretary to the State Government (SSG)",
+    image: "/images/ondo-official-seal.svg",
+  },
+  {
+    name: "Prince Olusegun Omojuwa",
+    title: "Chief of Staff to the Governor",
+    image: "/images/ondo-official-seal.svg",
+  },
+  {
+    name: "Chief Segun Odusanya",
+    title: "Head of Service",
+    image: "/images/ondo-official-seal.svg",
   },
   {
     name: "Mr. Dare Aragbaye",
@@ -35,46 +45,26 @@ const executiveCouncilMembers: CouncilMember[] = [
   },
   {
     name: "Mr. Babajide Akeredolu",
-    title: "DG, Project Implementation Monitoring Unit",
+    title: "Director General, Performance & Project Monitoring Unit",
     image: encodeURI("/images/Mr. Babajide Akeredolu.png"),
-  },
-  {
-    name: "Chief Olugbenga Ale",
-    title: "Chief of Staff to the Governor",
-    image: "/placeholder.svg?height=150&width=150",
-  },
-  {
-    name: "Mr. Olugbenga Ajiboye",
-    title: "Head of Service",
-    image: "/placeholder.svg?height=150&width=150",
   },
 ]
 
 const honourableCommissioners: CouncilMember[] = [
   {
-    name: "Mrs. Bamidele Ademola-Olateju",
+    name: "Hon. Idowu Ajanaku",
     title: "Commissioner for Information and Orientation",
-    image: encodeURI("/images/Mrs Bamdiele Ademola Olateju.png"),
+    image: "/images/ondo-official-seal.svg",
+  },
+  {
+    name: "Dr. Olukayode Ajulo (SAN)",
+    title: "Attorney General and Commissioner for Justice",
+    image: "/images/ondo-official-seal.svg",
   },
   {
     name: "Dr. Banji Ajaka",
     title: "Commissioner for Health",
     image: encodeURI("/images/Dr.Banji Awolowo Ajaka.png"),
-  },
-  {
-    name: "Engr. Raimi Aminu",
-    title: "Commissioner for Infrastructure, Lands and Housing",
-    image: encodeURI("/images/Engineer Raimi Aminu.png"),
-  },
-  {
-    name: "Hon. Olufemi Agagu",
-    title: "Commissioner for Education, Science and Technology",
-    image: encodeURI("/images/Hon. Femi Agagu.png"),
-  },
-  {
-    name: "Sir Charles Titiloye (SAN)",
-    title: "Attorney General and Commissioner for Justice",
-    image: encodeURI("/images/Sir.Charles Titiloye (SAN).png"),
   },
   {
     name: "Engr. Razaq Obe",
@@ -85,6 +75,21 @@ const honourableCommissioners: CouncilMember[] = [
     name: "Pastor Emmanuel Igbasan",
     title: "Commissioner for Budget and Economic Planning",
     image: encodeURI("/images/Mr. Emmanuel Igbasan.png"),
+  },
+  {
+    name: "Hon. Olufemi Agagu",
+    title: "Commissioner for Education, Science and Technology",
+    image: encodeURI("/images/Hon. Femi Agagu.png"),
+  },
+  {
+    name: "Mrs. Bamidele Ademola-Olateju",
+    title: "Commissioner for Information and Orientation (Former)",
+    image: encodeURI("/images/Mrs Bamdiele Ademola Olateju.png"),
+  },
+  {
+    name: "Engr. Raimi Aminu",
+    title: "Commissioner for Infrastructure, Lands and Housing",
+    image: encodeURI("/images/Engineer Raimi Aminu.png"),
   },
   {
     name: "Hon. Adewale Akinlosotu",
@@ -107,24 +112,14 @@ const honourableCommissioners: CouncilMember[] = [
     image: encodeURI("/images/Mrs. Yetunde Adeyanju.png"),
   },
   {
-    name: "Mr. Donald Ojogo",
-    title: "Former Commissioner for Information and Orientation",
-    image: encodeURI("/images/Mr. Donald Ojogo.png"),
-  },
-  {
-    name: "Mr. Adewale Olumuyiwa",
-    title: "Honourable Commissioner",
-    image: encodeURI("/images/Mr. Adewale Olumuyiwa.png"),
-  },
-  {
-    name: "Prince Dayo Awude",
+    name: "Mrs. Omowumi Isaac",
     title: "Commissioner for Finance",
-    image: "/placeholder.svg?height=150&width=150",
+    image: "/images/ondo-official-seal.svg",
   },
   {
     name: "Mr. Akinwumi Sowore",
     title: "Commissioner for Commerce, Industry and Cooperative Services",
-    image: "/placeholder.svg?height=150&width=150",
+    image: "/images/ondo-official-seal.svg",
   },
 ]
 

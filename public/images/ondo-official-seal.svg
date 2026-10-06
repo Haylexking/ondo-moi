@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f291e" />
+      <stop offset="50%" stop-color="#143d2c" />
+      <stop offset="100%" stop-color="#1a533a" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd56b" />
+      <stop offset="100%" stop-color="#e5a93b" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="600" fill="url(#bgGrad)" />
+  <rect width="600" height="600" fill="url(#grid)" />
+
+  <!-- Subtle ambient ring -->
+  <circle cx="300" cy="270" r="170" fill="none" stroke="rgba(229, 169, 59, 0.15)" stroke-width="2" stroke-dasharray="6 6" />
+
+  <!-- Official Government Crest Emblem -->
+  <g transform="translate(300, 250)">
+    <!-- Shield / Seal -->
+    <path d="M -80 -90 L 80 -90 Q 90 20 0 110 Q -90 20 -80 -90 Z" fill="rgba(10, 30, 20, 0.6)" stroke="url(#goldGrad)" stroke-width="4"/>
+    
+    <!-- Sunburst rays / Sunshine state symbol -->
+    <circle cx="0" cy="-35" r="28" fill="url(#goldGrad)" />
+    <path d="M 0 -75 L 0 -67 M 28 -63 L 22 -57 M 40 -35 L 32 -35 M 28 -7 L 22 -13 M 0 5 L 0 -3 M -28 -7 L -22 -13 M -40 -35 L -32 -35 M -28 -63 L -22 -57" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" />
+    
+    <!-- Mineral / Agriculture horn & Cocoa symbol -->
+    <path d="M -30 20 Q 0 -10 30 20 Q 0 45 -30 20 Z" fill="#2d7a54" stroke="#ffd56b" stroke-width="2" />
+    
+    <!-- Stars -->
+    <circle cx="-50" cy="-60" r="4" fill="#ffd56b" />
+    <circle cx="50" cy="-60" r="4" fill="#ffd56b" />
+    <circle cx="0" cy="65" r="4" fill="#ffd56b" />
+  </g>
+
+  <!-- Typography -->
+  <text x="300" y="440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#ffffff" letter-spacing="3" text-anchor="middle">
+    ONDO STATE GOVERNMENT
+  </text>
+  <text x="300" y="475" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" fill="#ffd56b" letter-spacing="2" text-anchor="middle">
+    MINISTRY OF INFORMATION &amp; ORIENTATION
+  </text>
+  <text x="300" y="515" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="rgba(255, 255, 255, 0.6)" letter-spacing="1" text-anchor="middle">
+    OFFICIAL EXECUTIVE ARCHIVE
+  </text>
+</svg>

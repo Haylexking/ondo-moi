@@ -245,20 +245,18 @@ export default function NationalAssembly() {
                 <Twitter className="h-5 w-5 text-blue-400" />
               </div>
               <div className="p-4">
-                <div className="mb-4 overflow-hidden rounded-lg">
-                  <Image
-                    src="/placeholder.svg?height=200&width=350"
+                <div className="relative mb-4 aspect-video overflow-hidden rounded-lg bg-slate-900">
+                  <SafeImage
+                    src="/images/ondo-official-seal.svg"
                     alt="Twitter post"
-                    width={350}
-                    height={200}
-                    className="h-auto w-full"
+                    fill
+                    className="object-contain p-6"
                   />
                 </div>
                 <p className="mb-4 text-sm text-gray-300">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis,
-                  lectus magna fringilla urna, porttitor.
+                  Governor Lucky Aiyedatiwa reaffirms commitment to Ondo youth empowerment, rural industrialization, and infrastructure expansion across all three senatorial districts.
                 </p>
-                <Link href="#" className="flex items-center gap-1 text-sm text-blue-400 hover:underline">
+                <Link href="https://x.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm text-blue-400 hover:underline">
                   See more <Twitter className="h-4 w-4" />
                 </Link>
               </div>
@@ -270,20 +268,18 @@ export default function NationalAssembly() {
                 <Facebook className="h-5 w-5 text-blue-600" />
               </div>
               <div className="p-4">
-                <div className="mb-4 overflow-hidden rounded-lg">
-                  <Image
-                    src="/placeholder.svg?height=200&width=350"
+                <div className="relative mb-4 aspect-video overflow-hidden rounded-lg bg-slate-900">
+                  <SafeImage
+                    src="/images/ondo-official-seal.svg"
                     alt="Facebook post"
-                    width={350}
-                    height={200}
-                    className="h-auto w-full"
+                    fill
+                    className="object-contain p-6"
                   />
                 </div>
                 <p className="mb-4 text-sm text-gray-300">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis,
-                  lectus magna fringilla urna, porttitor.
+                  Ministry of Information and Orientation partners with grassroots stakeholders to sensitize rural communities on healthcare initiatives and agricultural inputs.
                 </p>
-                <Link href="#" className="flex items-center gap-1 text-sm text-blue-600 hover:underline">
+                <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm text-blue-600 hover:underline">
                   See more <Facebook className="h-4 w-4" />
                 </Link>
               </div>
@@ -295,20 +291,18 @@ export default function NationalAssembly() {
                 <Instagram className="h-5 w-5 text-pink-500" />
               </div>
               <div className="p-4">
-                <div className="mb-4 overflow-hidden rounded-lg">
-                  <Image
-                    src="/placeholder.svg?height=200&width=350"
+                <div className="relative mb-4 aspect-video overflow-hidden rounded-lg bg-slate-900">
+                  <SafeImage
+                    src="/images/ondo-official-seal.svg"
                     alt="Instagram post"
-                    width={350}
-                    height={200}
-                    className="h-auto w-full"
+                    fill
+                    className="object-contain p-6"
                   />
                 </div>
                 <p className="mb-4 text-sm text-gray-300">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis,
-                  lectus magna fringilla urna, porttitor.
+                  Highlights from the Ondo State cultural showcase and educational reforms summit held at the International Culture & Event Centre (The Dome), Akure.
                 </p>
-                <Link href="#" className="flex items-center gap-1 text-sm text-pink-500 hover:underline">
+                <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm text-pink-500 hover:underline">
                   See more <Instagram className="h-4 w-4" />
                 </Link>
               </div>

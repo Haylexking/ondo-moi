@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
+import SafeImage from "@/components/SafeImage"
 import Link from "next/link"
 import { User, Calendar, ChevronLeft, ChevronRight } from "lucide-react"
 import NewsletterSection from "@/components/newsletter-section"
@@ -19,141 +19,105 @@ interface BlogPost {
 const featuredPosts: BlogPost[] = [
   {
     id: 1,
-    title: "Follow This Formular For A Winning Fit Everytime",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
-    author: "Andrew Smith",
-    date: "August 10, 2023",
-    image: "/placeholder.svg?height=300&width=500",
-    slug: "winning-fit-everytime-1",
+    title: "Ondo State Agricultural Renaissance: Empowering Cocoa & Oil Palm Farmers",
+    excerpt: "Exploring the state government's strategic input subsidies, high-yield seedlings distribution, and rural feeder road expansion across agrarian communities.",
+    author: "Information Bureau",
+    date: "October 12, 2024",
+    image: encodeURI("/images/Rectangle 39.png"),
+    slug: "agricultural-renaissance-cocoa-farmers",
   },
   {
     id: 2,
-    title: "Follow This Formular For A Winning Fit Everytime",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
-    author: "Andrew Smith",
-    date: "August 10, 2023",
-    image: "/placeholder.svg?height=300&width=500",
-    slug: "winning-fit-everytime-2",
+    title: "Preserving Cultural Heritage: Traditional Festivals and Tourism Horizons in Ondo",
+    excerpt: "How the Ministry of Culture and Information is documenting sacred heritage sites from the Idanre Hills to traditional festivals across the three senatorial districts.",
+    author: "Culture & Tourism Desk",
+    date: "September 28, 2024",
+    image: encodeURI("/images/Olotu Orege.png"),
+    slug: "preserving-cultural-heritage-idanre",
   },
   {
     id: 3,
-    title: "Follow This Formular For A Winning Fit Everytime",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
-    author: "Andrew Smith",
-    date: "August 10, 2023",
-    image: "/placeholder.svg?height=300&width=500",
-    slug: "winning-fit-everytime-3",
+    title: "Expanding Healthcare Coverage: The Contributory Health Insurance Scheme in Focus",
+    excerpt: "An in-depth review of healthcare access improvements, revitalized basic health centers, and maternal care subsidies under Governor Lucky Aiyedatiwa.",
+    author: "Public Health Liaison",
+    date: "August 15, 2024",
+    image: encodeURI("/images/Dr.Banji Awolowo Ajaka.png"),
+    slug: "expanding-healthcare-contributory-scheme",
   },
 ]
 
 const recentPosts: BlogPost[] = [
   {
     id: 1,
-    title: "Follow This Formular For A Winning Fit Everytime",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
-    author: "Andrew Smith",
-    date: "August 10, 2023",
-    image: "/placeholder.svg?height=200&width=350",
-    slug: "winning-fit-everytime-1",
+    title: "Strategic Infrastructure Corridors: Bridging Urban-Rural Economic Divides",
+    excerpt: "Key highway rehabilitation projects enhancing commercial transit between Akure, Ondo town, and the riverine economic belt.",
+    author: "Works & Infrastructure Team",
+    date: "October 18, 2024",
+    image: encodeURI("/images/Rectangle 16.png"),
+    slug: "strategic-infrastructure-corridors",
   },
   {
     id: 2,
-    title: "Follow This Formular For A Winning Fit Everytime",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
-    author: "Andrew Smith",
-    date: "August 10, 2023",
-    image: "/placeholder.svg?height=200&width=350",
-    slug: "winning-fit-everytime-2",
+    title: "Empowering Next-Gen Leaders: Ondo State Youth Entrepreneurship Initiatives",
+    excerpt: "Vocational skills training, tech innovation grants, and MSME funding driving economic self-reliance for young people.",
+    author: "Youth Affairs Desk",
+    date: "October 14, 2024",
+    image: encodeURI("/images/Hon. Bamidele Ologun.png"),
+    slug: "youth-entrepreneurship-initiatives",
   },
   {
     id: 3,
-    title: "Follow This Formular For A Winning Fit Everytime",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
-    author: "Andrew Smith",
-    date: "August 10, 2023",
-    image: "/placeholder.svg?height=200&width=350",
-    slug: "winning-fit-everytime-3",
+    title: "Digital Literacy & Modern Classrooms: Reimagining Public Basic Education",
+    excerpt: "Deploying interactive learning devices, training educators, and upgrading public school infrastructure statewide.",
+    author: "Education Ministry",
+    date: "October 02, 2024",
+    image: encodeURI("/images/Hon. Femi Agagu.png"),
+    slug: "digital-literacy-public-education",
   },
   {
     id: 4,
-    title: "Follow This Formular For A Winning Fit Everytime",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
-    author: "Andrew Smith",
-    date: "August 10, 2023",
-    image: "/placeholder.svg?height=200&width=350",
-    slug: "winning-fit-everytime-4",
+    title: "Local Government Autonomy: Deepening Grassroots Administrative Delivery",
+    excerpt: "Empowering council administrations to drive rural water supply, primary health delivery, and community peacebuilding.",
+    author: "Chieftaincy Affairs Bureau",
+    date: "September 22, 2024",
+    image: encodeURI("/images/Hon. Adewale Akinlosotu.png"),
+    slug: "local-government-grassroots-delivery",
   },
   {
     id: 5,
-    title: "Follow This Formular For A Winning Fit Everytime",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
-    author: "Andrew Smith",
-    date: "August 10, 2023",
-    image: "/placeholder.svg?height=200&width=350",
-    slug: "winning-fit-everytime-5",
+    title: "Ondo Deep Seaport Project: Unlocking Maritime Trade and Global Industrialization",
+    excerpt: "A comprehensive update on regulatory clearances, private sector partnerships, and projected job creation in Ilaje.",
+    author: "Economic Planning Team",
+    date: "September 10, 2024",
+    image: encodeURI("/images/Mr. Emmanuel Igbasan.png"),
+    slug: "deep-seaport-maritime-trade",
   },
   {
     id: 6,
-    title: "Follow This Formular For A Winning Fit Everytime",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
-    author: "Andrew Smith",
-    date: "August 10, 2023",
-    image: "/placeholder.svg?height=200&width=350",
-    slug: "winning-fit-everytime-6",
+    title: "Renewable Energy and Clean Power Access for Rural Communities",
+    excerpt: "Deploying solar micro-grids and off-grid power solutions to light up agrarian farm settlements across Ondo State.",
+    author: "Energy & Mineral Resources",
+    date: "August 29, 2024",
+    image: encodeURI("/images/Engineer Razaq Obe.png"),
+    slug: "renewable-energy-clean-power-access",
   },
   {
     id: 7,
-    title: "Follow This Formular For A Winning Fit Everytime",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
-    author: "Andrew Smith",
-    date: "August 10, 2023",
-    image: "/placeholder.svg?height=200&width=350",
-    slug: "winning-fit-everytime-7",
+    title: "Civic Orientation and Community Engagement: The Role of Town Hall Forums",
+    excerpt: "Promoting participatory democracy by bringing state executive officials directly to community dialogue tables.",
+    author: "Ministry of Information",
+    date: "August 18, 2024",
+    image: "/images/ondo-official-seal.svg",
+    slug: "civic-orientation-town-hall-forums",
   },
   {
     id: 8,
-    title: "Follow This Formular For A Winning Fit Everytime",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
-    author: "Andrew Smith",
-    date: "August 10, 2023",
-    image: "/placeholder.svg?height=200&width=350",
-    slug: "winning-fit-everytime-8",
-  },
-  {
-    id: 9,
-    title: "Follow This Formular For A Winning Fit Everytime",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
-    author: "Andrew Smith",
-    date: "August 10, 2023",
-    image: "/placeholder.svg?height=200&width=350",
-    slug: "winning-fit-everytime-9",
-  },
-  {
-    id: 10,
-    title: "Follow This Formular For A Winning Fit Everytime",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
-    author: "Andrew Smith",
-    date: "August 10, 2023",
-    image: "/placeholder.svg?height=200&width=350",
-    slug: "winning-fit-everytime-10",
-  },
-  {
-    id: 11,
-    title: "Follow This Formular For A Winning Fit Everytime",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
-    author: "Andrew Smith",
-    date: "August 10, 2023",
-    image: "/placeholder.svg?height=200&width=350",
-    slug: "winning-fit-everytime-11",
-  },
-  {
-    id: 12,
-    title: "Follow This Formular For A Winning Fit Everytime",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis...",
-    author: "Andrew Smith",
-    date: "August 10, 2023",
-    image: "/placeholder.svg?height=200&width=350",
-    slug: "winning-fit-everytime-12",
+    title: "Afforestation and Forest Reserve Protection: Combating Illegal Encroachment",
+    excerpt: "Protecting vital biodiversity corridors while expanding certified tree plantations for sustainable agro-forestry.",
+    author: "Forestry Department",
+    date: "August 04, 2024",
+    image: encodeURI("/images/Hon. Adefarati Adegboyega.png"),
+    slug: "afforestation-forest-reserve-protection",
   },
 ]
 
@@ -185,7 +149,7 @@ export default function Blogs() {
                   <div key={post.id} className="min-w-full px-4">
                     <div className="flex flex-col overflow-hidden rounded-lg shadow-lg md:flex-row">
                       <div className="relative h-64 w-full md:h-auto md:w-1/2">
-                        <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
+                        <SafeImage src={post.image || "/images/ondo-official-seal.svg"} alt={post.title} fill className="object-cover" />
                       </div>
                       <div className="flex flex-1 flex-col justify-between p-6">
                         <div>
@@ -246,7 +210,7 @@ export default function Blogs() {
               >
                 <Link href={`/blogs/${post.slug}`}>
                   <div className="relative h-48 w-full">
-                    <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
+                    <SafeImage src={post.image || "/images/ondo-official-seal.svg"} alt={post.title} fill className="object-cover" />
                   </div>
                 </Link>
                 <div className="p-4">

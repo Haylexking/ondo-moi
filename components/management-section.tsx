@@ -10,21 +10,21 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Mrs. Bamidele Ademola-Olateju",
-    position: "Honourable Commissioner for Information and Orientation",
-    image: encodeURI("/images/Mrs Bamdiele Ademola Olateju.png"),
+    name: "Hon. Idowu Ajanaku",
+    position: "Honourable Commissioner for Information & Orientation",
+    image: "/images/ondo-official-seal.svg",
   },
   {
     id: 2,
-    name: "Mr. Kayode Fasua",
-    position: "Permanent Secretary",
-    image: "/placeholder.svg?height=300&width=300",
+    name: "Mr. Lanre Akarakiri",
+    position: "Administrative Secretary, Ministry of Information",
+    image: "/images/ondo-official-seal.svg",
   },
   {
     id: 3,
     name: "Mr. Sola Omoboyowa",
-    position: "Director of Information Services",
-    image: "/placeholder.svg?height=300&width=300",
+    position: "Director of Information Services & Media Operations",
+    image: "/images/ondo-official-seal.svg",
   },
 ]
 

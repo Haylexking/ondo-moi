@@ -1,4 +1,4 @@
-import Image from "next/image"
+import SafeImage from "@/components/SafeImage"
 import Link from "next/link"
 import { User, Calendar, ChevronLeft, ChevronRight } from "lucide-react"
 import NewsletterSection from "@/components/newsletter-section"
@@ -12,67 +12,50 @@ interface BlogPostProps {
 export default function BlogPost({ params }: BlogPostProps) {
   // In a real app, you would fetch the post data based on the slug
   const post = {
-    title: "Viverra Idtristiqut ectrew Egetnisi: Sapien aliquam innisl.",
+    title: "Ondo State Agricultural Renaissance: Empowering Rural Farmers and Youth Agripreneurs",
     author: {
-      name: "Taiwo Adekola",
-      role: "Editorial staff",
-      image: "/placeholder.svg?height=50&width=50",
+      name: "Ministry Information Bureau",
+      role: "Official Press Desk",
+      image: "/images/ondo-official-seal.svg",
     },
-    date: "JULY 23, 2023",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Blog%20Post-hxUFTMuQ9uLVFJSReT5FdUgCF88QKA.png",
+    date: "OCTOBER 14, 2024",
+    image: "/images/ondo-official-seal.svg",
     content: `
-      <p>In a groundbreaking development for the automotive industry and the environment, engineers and scientists have unveiled a revolutionary solar-powered car that promises to reshape the future of transportation. The unveiling took place at the SolarTech Expo, a prestigious event showcasing cutting-edge solar innovations.</p>
+      <p>In a groundbreaking development for agricultural industrialization and food security, the Ondo State Government under Governor Lucky Orimisan Aiyedatiwa has inaugurated new farmer empowerment programs and expanded access to soft loans and high-yield inputs.</p>
       
-      <p>The brainchild of a collaboration between leading automaker SolarDrive Inc. and solar technology giant SunPower Solutions, this futuristic vehicle is equipped with cutting-edge photovoltaic cells integrated into its body, harnessing the power of the sun to propel itself forward.</p>
+      <p>The strategic framework focuses on transforming rural economies, scaling cocoa and oil palm value chains, and creating modern agricultural clusters for youth across the 18 Local Government Areas.</p>
       
-      <p>SolarDrive CEO, Dr. Amelia Roberts, described the project as a "milestone in sustainable transportation." She explained, "Our solar-powered car marks a significant step toward reducing our reliance on fossil fuels, curbing carbon emissions, and combating climate change."</p>
-      
-      <h2>How it Works</h2>
-      
-      <p>The solar-powered car, known as the "SunRider," features a sleek, aerodynamic design with solar panels covering its entire surface area. These advanced solar panels capture sunlight during the day, converting it into electricity to charge the vehicle's batteries. The stored energy can be used for driving, even during cloudy days or at night.</p>
-      
-      <h2>Key Features</h2>
-      
+      <h2>Policy Priorities</h2>
       <ul>
-        <li>Zero Emissions: The SunRider is a zero-emission vehicle, emitting no harmful greenhouse gases during operation.</li>
-        <li>Long-Range: Thanks to its efficient energy conversion and storage system, the car boasts an impressive range on a single charge.</li>
-        <li>Regenerative Braking: The SunRider incorporates regenerative braking technology, further enhancing its energy efficiency.</li>
+        <li>Subsidized organic fertilizer and disease-resistant seedlings distribution.</li>
+        <li>Access road rehabilitation to connect rural farm settlements directly to urban markets.</li>
+        <li>Youth training in mechanized farming, greenhouse horticulture, and agro-processing.</li>
       </ul>
-      
-      <h2>Industry Experts Weigh In</h2>
-      
-      <p>Prominent environmentalist and advocate for renewable energy, Dr. Michael Turner, praised the innovation, saying: "The SunRider demonstrates the immense potential of solar technology in addressing the environmental challenges we face. It's a game-changer for clean transportation."</p>
-      
-      <h2>The Road Ahead</h2>
-      
-      <p>SolarDrive Inc. and SunPower Solutions are currently finalizing production plans for the SunRider, with expectations of rolling out the first batch of solar-powered cars within the next year. Industry analysts predict a surge in demand as eco-conscious consumers seek sustainable alternatives to traditional vehicles.</p>
-      
-      <p>As the world grapples with the climate crisis, the SunRider offers a glimmer of hope, highlighting the innovative solutions that could lead us to a cleaner, greener future.</p>
     `,
     relatedPosts: [
       {
         id: 1,
-        title: "Navigating Uncertainty with Faith: Trusting God's Plan",
-        image: "/placeholder.svg?height=200&width=300",
-        slug: "navigating-uncertainty-1",
-        author: "Andrew Smith",
-        date: "August 10, 2023",
+        title: "Ondo State Invests in Deep Seaport and Coastal Economic Corridor",
+        image: "/images/ondo-official-seal.svg",
+        slug: "ondo-deep-seaport-corridor",
+        author: "Press Unit",
+        date: "September 28, 2024",
       },
       {
         id: 2,
-        title: "Navigating Uncertainty with Faith: Trusting God's Plan",
-        image: "/placeholder.svg?height=200&width=300",
-        slug: "navigating-uncertainty-2",
-        author: "Andrew Smith",
-        date: "August 10, 2023",
+        title: "Healthcare Infrastructure Upgrade: Revitalizing Primary Health Centers Across Ondo",
+        image: "/images/ondo-official-seal.svg",
+        slug: "healthcare-upgrade-ondo",
+        author: "Health Desk",
+        date: "October 02, 2024",
       },
       {
         id: 3,
-        title: "Navigating Uncertainty with Faith: Trusting God's Plan",
-        image: "/placeholder.svg?height=200&width=300",
-        slug: "navigating-uncertainty-3",
-        author: "Andrew Smith",
-        date: "August 10, 2023",
+        title: "Civil Service Welfare and Prompt Pension Disbursements: The Sunshine State Model",
+        image: "/images/ondo-official-seal.svg",
+        slug: "civil-service-welfare",
+        author: "Information Bureau",
+        date: "October 10, 2024",
       },
     ],
   }
@@ -80,7 +63,7 @@ export default function BlogPost({ params }: BlogPostProps) {
   return (
     <>
       <div className="relative h-[400px] w-full">
-        <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" priority />
+        <SafeImage src={post.image || "/images/ondo-official-seal.svg"} alt={post.title} fill className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
         <div className="absolute inset-0 flex items-center">
           <div className="container">
@@ -96,8 +79,8 @@ export default function BlogPost({ params }: BlogPostProps) {
           <div className="mb-8 flex items-center gap-4">
             <div className="flex items-center gap-3">
               <div className="relative h-12 w-12 overflow-hidden rounded-full">
-                <Image
-                  src={post.author.image || "/placeholder.svg"}
+                <SafeImage
+                  src={post.author.image || "/images/ondo-official-seal.svg"}
                   alt={post.author.name}
                   fill
                   className="object-cover"
@@ -122,8 +105,8 @@ export default function BlogPost({ params }: BlogPostProps) {
                 <div key={related.id} className="group">
                   <Link href={`/blogs/${related.slug}`}>
                     <div className="relative mb-3 h-48 overflow-hidden rounded-lg">
-                      <Image
-                        src={related.image || "/placeholder.svg"}
+                      <SafeImage
+                        src={related.image || "/images/ondo-official-seal.svg"}
                         alt={related.title}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
